@@ -1,0 +1,13 @@
+$widthContainer: 1300px;
+$fontFamily: "Gilroy-Regular";
+$fontSize: 24px;
+$mainColor: #fff;
+$secondColor: #000;
+$firstBackgound: #fff;
+$secondBackground: #1596C1;
+
+// Брейк-поинты
+$pc: $widthContainer + px; // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
+$tablet: 991.98px; // Планшеты, некоторые телефоны в горизонтальном положении
+$mobile: 767.98px; // Телефоны L
+$mobileSmall: 479.98px; // Телефоны S
