@@ -2,14 +2,14 @@
   <div class="v-novelties-item">
     <div class="v-novelties-item__body">
       <img :src="require(`./../../assets/images/novelties/${ novelty.picture }`)" alt="" class="v-novelties-item__img">
-      <div class="v-novelties-item__title">
+      <div class="v-novelties-item__title _text">
         {{ novelty.title }}
       </div>
-      <div class="v-novelties-item__category">
+      <div class="v-novelties-item__category _text">
         {{ novelty.category }}
       </div>
-      <div class="v-novelties-item__price">
-        {{ novelty.price }}
+      <div class="v-novelties-item__price _num">
+        {{ novelty.price }} р.
       </div>
     </div>
   </div>
@@ -46,27 +46,25 @@ export default {
   }
 
   &__title {
-    margin: 29px 0 40px 0;
-    line-height: 36px;
-    text-align: center;
-    letter-spacing: 0.07em;
     height: 75px;
+    @include adaptive-value('margin-bottom', 40, 20, 1);
+    margin-top: 29px;
+    text-align: center;
   }
 
   &__category {
     font-size: 18px;
     line-height: 27px;
     text-align: center;
-    letter-spacing: 0.07em;
   }
 
   &__price {
-    margin: 50px 0 25px 0;
-    font-size: 30px;
+    @include adaptive-value('margin-top', 50, 20, 1);
+    @include adaptive-value('margin-bottom', 25, 15, 1);
+    @include adaptive-value('font-size', 30, 24, 1);
+    letter-spacing: 0.07em;
     line-height: 45px;
     text-align: center;
-    letter-spacing: 0.07em;
-    font-feature-settings: 'pnum' on, 'lnum' on;
     text-align: left;
   }
 }

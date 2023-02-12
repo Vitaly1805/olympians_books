@@ -3,7 +3,7 @@
     class="v-menu"
     :class="{active: isActive}">
     <div class="v-menu__body _container">
-      <div class="v-menu__list">
+      <div class="v-menu__list _text">
         <div 
           class="v-menu__item"
           v-for="item of menuItems"
@@ -78,7 +78,6 @@ export default {
   &__item {
     cursor: pointer;
     text-align: center;
-    letter-spacing: 0.07em;
     font-size: 30px;
     line-height: 45px;
   }

@@ -8,7 +8,7 @@
         <div class="v-about__subtitle _title">
           О нас
         </div>
-        <div class="v-about__text">
+        <div class="v-about__text _text">
           Книжное наследие от мыслителей Древней Греции и до людей современности. Это не просто магазин, а настоящий клуб любителей книги, который объединяет в своем культурном пространстве людей самых разных интересов.
         </div>
       </div>
@@ -16,7 +16,7 @@
         <div class="v-about__subtitle _title">
           Гармония
         </div>
-        <div class="v-about__text">
+        <div class="v-about__text _text">
           Наш проект «Гармония» объединяет читателей и авторов в реальности и в интернете. Каждую неделю проводятся встречи онлайн и вживую. Из наших регулярных рубрик вы узнаете много нового о книгах и писателях.
         </div>
       </div>
@@ -75,9 +75,7 @@ export default {
 
   &__text {
     padding: 40px 0 60px 0;
-    line-height: 36px;
     text-align: center;
-    letter-spacing: 0.07em;
     margin: 0 auto;
     @include adaptive-value('font-size', 24, 20, 1);
 

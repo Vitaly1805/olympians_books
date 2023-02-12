@@ -5,7 +5,7 @@
       <vMenu 
         :isActive="isActive"/>
       <div class="v-header__top">
-        <div class="v-header__name">
+        <div class="v-header__icon _icon">
           <span>Olympians</span> 
           <span>Books</span>
         </div>
@@ -72,7 +72,7 @@ export default {
     }
 
     @media (max-width: $mobile) {
-      .v-header__name {
+      .v-header__icon {
         color: #000;
       }
     }
@@ -82,13 +82,8 @@ export default {
     position: relative;
   }
 
-  &__name {
-    font-family: 'Archeologicaps';
+  &__icon {
     padding: 10px 0 50px 0;
-    font-weight: 500;
-    line-height: 36px;
-    display: flex;
-    flex-direction: column;
     transition: all .5s ease;
 
     @media (max-width: $mobile) {
@@ -136,8 +131,9 @@ export default {
     font-family: 'Forum';
     @include adaptive-value('font-size', 80, 30, 1);
     @include adaptive-value('line-height', 120, 50, 1);
-    letter-spacing: 0.07em;
     text-transform: uppercase;
+    line-height: 120px;
+    letter-spacing: 0.07em;
     max-width: 860px;
     width: 80%;
 
