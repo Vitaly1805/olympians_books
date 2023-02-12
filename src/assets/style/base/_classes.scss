@@ -6,10 +6,12 @@
 }
 
 ._title {
-  font-size: 34px;
-  line-height: 42px;
-  text-align: left;
-  font-weight: bold;
+  font-family: 'Forum';
+  line-height: 96px;
+  text-align: center;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  @include adaptive-value('font-size', 64, 40, 1);
 }
 
 ._btn-mini {

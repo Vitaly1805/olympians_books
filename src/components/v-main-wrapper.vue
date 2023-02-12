@@ -1,17 +1,24 @@
 <template>
   <div class="v-main-wrapper">
       <vHeader />
+      <vNovelties />
+      <vAbout />
       <!-- <router-view></router-view> -->
   </div>
 </template>
 
 <script>
+
 import vHeader from './header/v-header.vue'
+import vNovelties from './novelties/v-novelties.vue'
+import vAbout from './about/v-about.vue'
 
 export default {
   name: 'v-main-wrapper',
   components: {
-    vHeader
+    vHeader,
+    vNovelties,
+    vAbout
   }
 }
 </script>
