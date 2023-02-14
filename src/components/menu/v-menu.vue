@@ -4,18 +4,22 @@
     :class="{active: isActive}">
     <div class="v-menu__body _container">
       <div class="v-menu__list _text">
-        <div 
+        <router-link
           class="v-menu__item"
           v-for="item of menuItems"
-          :key="item.id">
+          :to="item.to"
+          :key="item.id"
+          @click="closeMenu">
           {{ item.name }}
-        </div>
+        </router-link>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+
+import menuItems from '../../store/menu-item'
 
 export default {
   name: 'v-menu',
@@ -29,25 +33,23 @@ export default {
   },
   data() {
     return {
-      menuItems: [
-        {
-          id: 1,
-          name: 'Главная',
-          link: ''
-        },
-        {
-          id: 2,
-          name: 'Каталог',
-          link: ''
-        }
-      ]
+      menuItems: []
     }
+  },
+  methods: {
+    closeMenu() {
+      this.$emit('closeMenu')
+    }
+  },
+  mounted() {
+    this.menuItems = menuItems
   }
 }
 </script>
 
 <style lang="scss">
 .v-menu {
+  z-index: 5;
   max-width: 420px;
   width: 100%;
   background: #fff;
@@ -67,6 +69,7 @@ export default {
     font-family: 'Forum';
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 56px;
 
     @media (max-width: $mobile) {

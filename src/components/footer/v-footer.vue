@@ -9,12 +9,13 @@
         +30922040281
       </div>
       <div class="v-footer__menu _text">
-        <div class="v-footer__item">
-          Главная
-        </div>
-        <div class="v-footer__item">
-          Каталог
-        </div>
+        <router-link
+          class="v-footer__item"
+          v-for="item of menuItems"
+          :to="item.to"
+          :key="item.id">
+          {{ item.name }}
+        </router-link>
       </div>
     </div>
   </div>
@@ -22,8 +23,18 @@
 
 <script>
 
+import menuItems from '../../store/menu-item'
+
 export default {
-  name: 'v-footer'
+  name: 'v-footer',
+  data() {
+    return {
+      menuItems: []
+    }
+  },
+  mounted() {
+    this.menuItems = menuItems
+  }
 }
 </script>
 

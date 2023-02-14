@@ -1,9 +1,9 @@
 <template>
-  <div class="v-novelties">
-    <div class="v-novelties__body">
+  <div class="v-catalog">
+    <div class="v-catalog__body">
       <vProducts 
         :products="products"
-        :title="'новинки'"/>
+        :title="'каталог'"/>
     </div>
   </div>
 </template>
@@ -16,7 +16,7 @@ import vProducts from '../products/v-products.vue';
 
 
 export default {
-  name: 'v-novelties',
+  name: 'v-catalog',
   data() {
     return {
       products: []
@@ -27,7 +27,7 @@ export default {
   },
   mounted() {
     axios
-      .post(config.noveltiesURL + '?access_token=' + config.token)
+      .post(config.catalogURL + '?access_token=' + config.token)
       .then(response => this.products = response.data)
       .catch(err => console.log(err));
   }
@@ -35,7 +35,7 @@ export default {
 </script>
 
 <style lang="scss">
-.v-novelties {
+.v-catalog {
 
 }
 </style>

@@ -1,14 +1,14 @@
 <template>
-  <div class="v-novelties-item">
-    <div class="v-novelties-item__body">
-      <img :src="require(`./../../assets/images/novelties/${ novelty.picture }`)" alt="" class="v-novelties-item__img">
-      <div class="v-novelties-item__title _text">
+  <div class="v-product">
+    <div class="v-product__body">
+      <img :src="require(`./../../assets/images/novelties/${ novelty.picture }`)" alt="" class="v-product__img">
+      <div class="v-product__title _text">
         {{ novelty.title }}
       </div>
-      <div class="v-novelties-item__category _text">
+      <div class="v-product__category _text">
         {{ novelty.category }}
       </div>
-      <div class="v-novelties-item__price _num">
+      <div class="v-product__price _num">
         {{ novelty.price }} р.
       </div>
     </div>
@@ -18,7 +18,7 @@
 <script>
 
 export default {
-  name: 'v-novelties-item',
+  name: 'v-product',
   props: {
     novelty: {
       type: Object,
@@ -31,7 +31,7 @@ export default {
 </script>
 
 <style lang="scss">
-.v-novelties-item {
+.v-product {
   border: 3px solid #000000;
   font-family: 'Raleway';
 

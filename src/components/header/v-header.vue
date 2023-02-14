@@ -2,8 +2,9 @@
   <div class="v-header"
     :class="{active: isActive}">
     <div class="v-header__body _container">
-      <vMenu 
-        :isActive="isActive"/>
+      <vMenu class="menu"
+        :isActive="isActive"
+        @closeMenu="closeMenu"/>
       <div class="v-header__top">
         <div class="v-header__icon _icon">
           <span>Olympians</span> 
@@ -11,7 +12,7 @@
         </div>
         <div
           class="v-header__arrow"
-          @click="toggleActive"></div>
+          @click="toggleMenu"></div>
       </div>
       <div class="v-header__title">
         Книги, которые вознесут вас на Олимп
@@ -35,9 +36,22 @@ export default {
     vMenu
   },
   methods: {
-    toggleActive() {
-      this.isActive = !this.isActive
+    toggleMenu() {
+      this.isActive = !this.isActive 
+    },
+    closeMenu() {
+      this.isActive = false 
     }
+  },
+  mounted() {
+    document.addEventListener('click', (event) => {
+      const target = event.target
+
+      if(!target.closest('.menu')
+         && !target.classList.contains('v-header__arrow')) {
+        this.isActive = false
+      }
+    })
   }
 }
 </script>
@@ -88,10 +102,14 @@ export default {
 
     @media (max-width: $mobile) {
       text-align: center;
+      z-index: 6;
+      position: relative;
+      padding-bottom: 0;
     }
   }
 
   &__arrow {
+    z-index: 6;
     position: absolute;
     cursor: pointer;
     width: 64px;
